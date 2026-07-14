@@ -1,240 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Isra Aman Aziz</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Isra Aman Aziz</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a onclick="showPage('about')">About</a></li>
-            <li><a onclick="showPage('work')">Work</a></li>
-            <li><a onclick="showPage('personal')">Personal</a></li>
-            <!--<li><a onclick="showPage('blog')">Blog</a></li>-->
-            <li><a onclick="showPage('resources')">Resources</a></li>
-        </ul>
-    </nav>
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">Isra Aman Aziz</a>
+    <ul>
+      <li><a href="index.html" class="active">About</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="personal.html">Personal</a></li>
+      <li><a href="resources.html">Resources</a></li>
+    </ul>
+  </div>
+</nav>
 
-    <div id="about" class="page active">
-        <div class="container">
-            <div class="hero">
-                <div class="hero-content">
-                    <h1>Isra Aman Aziz</h1>
-                    <p>Heyy there, Isra this side. I'm a passionate bioinformatics researcher, with a background in microbiology. My research focus majorly lies in
-                        identifying microbial and molecular signatures, genomics, and studying functional pathways with respect to human health, particularly in neurobiology by leveraging
-                        machine learning and other cool tech tools.</p>
-                        <p>I've always loved organizing and documenting stuff, both in real world an in thought. This instinct led me to bioinformatics, a field where abstract biological data can be 
-                        turned into something clear, testable and meaningful.</p>
-                    <p>I started out in microbiology because I was fascinated by the world that exists beyond what the eye can see. In the lab, I found myself obsessing over documenting, 
-                        sketching, questioning patterns, and trying to link these patterns. Over time, I realized that what I loved most wasn't these organisms themselves but the systems behind them. 
-                        Today, I work with biological data using computational tools to organize, analyze, and interpret complex information with the intention of bridging the gap between data and discovery.</p>
-                    <strong>This is my space on the web to document my journey of learning, building and figuring things out along the way.</strong>
-                </div>
-                <div>
-                    <img src="assets/image.jpg" alt="Isra Aman Aziz" class="profile-img">
-                </div>
-            </div>
+<main class="page">
+  <div class="container">
 
-            <div class="contact-info">
-                <h2>Contact Information</h2>
-                <p><strong>Email:</strong> <a href="mailto:isra.aman20@gmail.com">isra.aman20@gmail.com</a></p>
-                <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/israamanaziz" target="_blank">linkedin.com/in/israamanaziz</a></p>
-                <p><strong>GitHub:</strong> <a href="https://github.com/Israamanaziz" target="_blank">github.com/Israamanaziz</a></p>
-            </div>
-        </div>
+    <span class="eyebrow">Bioinformatics · Microbiology · Neurobiology</span>
+    <h1>Isra Aman Aziz</h1>
+
+    <div class="hero-layout">
+      <div class="hero-bio">
+        <p>Hey there, Thanks for stopping by.</p>
+        <p> I'm Isra Aman Aziz, a passionate bioinformatics researcher, with a background in microbiology. My research focus majorly lies in
+          identifying microbial and molecular signatures, biomarker discovery, genomics, and studying functional pathways with respect to human health, particularly in neurobiology by leveraging
+          bioinformatics, integrating AI/ML and other cool tech tools.</p>
+        <p>I started out in microbiology because I was fascinated by the world that exists beyond what the human eye can see. In the lab, I found myself obsessing over documenting,
+          sketching, analysing patterns, and trying to link these patterns into a system. Over time, I realized that what I loved most wasn't these organisms themselves but the systems behind them.</p>
+          <p>Today, I work with biological data using computational tools to organize, analyze, and interpret complex information with the intention of bridging the gap between data and discovery.</p>
+        <p><strong>This website is my space to document my journey of learning, building, breaking, debugging and figuring things out along the way.</strong></p>
+      </div>
+      <div>
+        <img src="assets/image.jpg" alt="Isra Aman Aziz" class="profile-img">
+      </div>
     </div>
 
-    <div id="work" class="page">
-        <div class="container">
-            <div class="work-content">
-                <h1>What I Do</h1>
-                <p>I analyze biological sequencing data using bioinformatics workflows, based on RNA-seq, miRNA-seq, 16srRNA datasets to turn complex, raw reads into readable and 
-                    interpretable results.
-                </p>
-                 <br>
-                <p><strong>But hey, why should one bother analyzing biological data at all?</strong> 
-                   
-                    Because right now as you're reading this, you're carrying more microbial cells than your own cells.
-                    More bacteria, fungi, and viruses living on and inside you than the cells that make up "you". 
-                    So, we living beings are not just random individuals, but a whole ecosystem.<br>
-                    <em>A walking breathing, universe of an invisible life! I mean, how cool is that!</em> <br>
-                    These microbes influence our immune system, mood, help us digest food and even shape our thought process through metabolite signaling and immune crosstalk. 
-                    But when dysbiosis strikes or stressors disrupt the balance, they can morph into opportunistic pathogens, fueling inflammation and disease.
-                 <p>Sooo, This is what I do. <br>
-                    <strong>For techies,</strong> I analyze biological sequencing data by turning millions of raw reads into valuable insights.</p>
-                    
-                 <p><strong>For non-techies,</strong> I am basically eavesdropping on these invisible conversations, mapping out who's there, what they're doing, and how they're
-                    interacting with each other and with us(host).
-                    The purpose is to understand the hidden relations that shape health and disease, to decode the molecular signals that run benath the surface.
-                 </p>
-                <h2>Skills</h2>
-                <li><strong> Bioinformatics & Data Analysis:</strong> Bulk RNA-seq (Raw reads to counts), miRNA-seq, 16S rRNA workflow using QIIME2 (alpha/beta diversity,taxonomy, PERMANOVA), 
-                    Differential Gene Expression (DESeq2), Gene Set Enrichment (GSEA), Sequence Assembly and Alignment (STAR/HISAT2)</li>
-                <li><strong>Computational tools:</strong>Python (EDA, preprocessing, visualization), R (DESeq2, Data wrangling, visualization), bash (scripting), 
-                    Github (documentation), Galaxy (cloud computing)</li>
-                <li><strong>Research and Communication:</strong> Scientific writing, technical writing, Documentation, Reproducible workflows, 
-                    excellent written and verbal communication</li>
-                <h2>Curriculum Vitae</h2>
-                <p>Please download my CV to see more:
-                <a href="assets/Isra Aman Aziz_cv.pdf" target="_blank">Download CV</a></p>
-            </div>
-        </div>
+    <h2>Let's Connect</h2>
+      <h5>Whether it's for research, collaboration, brainstorming, career discussion, <br>
+      or simply a conversation about science, I'd love to hear from you.</h5>
+    <div class="contact-strip">
+      <a href="mailto:isra.aman20@gmail.com">
+        <span class="label">Email</span>
+        <span class="val">isra.aman20@gmail.com</span>
+      </a>
+      <a href="https://linkedin.com/in/israamanaziz" target="_blank">
+        <span class="label">LinkedIn</span>
+        <span class="val">israamanaziz</span>
+      </a>
+      <a href="https://github.com/Israamanaziz" target="_blank">
+        <span class="label">GitHub</span>
+        <span class="val">Israamanaziz</span>
+      </a>
     </div>
 
-
-    <div id="personal" class="page">
-        <div class="container">
-            <h1>Beyond Academics</h1>
-            <p>Beyond academics, I love writing, constantly and inconsistently. I spend a lot of time jotting down abstract ideas, scattered thoughts, and half-formed 
-                processes as a way to understand my own thinking. Documenting and writing help me make sense of people, patterns, and perspectives, which gradually led 
-                me toward content writing. I cover a range of topics including educational content,scientific communication and writing, technical writing, and community-focused pieces, and these days I am 
-                adapting my voice to suit different audiences and purposes.</p>
-</p>
-    
-            <div class="interest-section">
-                <h2>Hobbies & Interests</h2>
-                <ul class="interest-list">
-                    <li>A cat fanatic, quite literally</li>
-                    <li>I love documenting my life and work</li>
-                    <li>Exploring cool websites and underrated blogs</li>
-                    <li>Reading as always, partly why I chose this field</li>
-                    <li>Sudoku</li>
-                </ul>
-            </div>
-
-            <div class="interest-section">
-                <h2>Favorite Books</h2>
-                <ul class="interest-list">
-                    <li><em>War and Peace</em> by Leo Tolstoy</li>
-                    <li><em>On the Origin of Species</em> by Charles Darwin</li>
-                    <li><em>1984</em> by George Orwell</li>
-                    <li><em>A Thousand Splendid Suns and The kite runner</em> by Khaled Hosseini</li>
-                    <li><em>The Namesake</em> by Jhumpa Lahiri</li>
-                    <li><em>Cats' Paws and Catapults</em> by Steven Vogel
-                    <br> <small> (Found this book after sneaking into a library during one of my conferences and spent the night reading it. 
-                        I fell in love with it instantly)</small></li> 
-                    <li><em>Bird by Bird</em> by Anne Lamott<em> (One of my most favourite books)</em></li>
-                    <li><em>The Bell Jar</em> by Sylvia Plath</li>
-                    <li><em>Merchant of Venice</em> by William Shakespeare</li>
-                    <li><em>Ghost Riders</em> by Mark Felton</li>    
-                    <P><strong>P.S.</strong> This list could go on and on forever. Let's just sit and talk :)</P>
-
-                </ul>
-            </div>
-
-            <div class="interest-section">
-                <h2>Music & Podcasts</h2>
-                <ul class="interest-list">
-                    <strong>Music</strong><p> Avicii · The Midnight · Kaavish · The 1975 · Taylor Swift · Coke Studio · The Local Train · Lorde </p>
-                    <br>
-                    <strong>Podcasts</strong><p> Radiolab · Soft White Underbelly · 3Blue1Brown</p>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <!--<div id="blog" class="page">
-        <div class="container">
-            <h1>Projects & Collaborations</h1>
-            <h2>Personal Projects</h2>
-            <div class="project-item">
-                <h3>Project Title</h3>
-                <p></p>
-            </div>
-            
-            <h2>Open to Collaborate On</h2>
-            <div class="project-item">
-                <h3>Collaboration Topic/Area</h3>
-                <p>Description</p>
-            </div>
-
-        </div>
-    </div> -->
-
-
-    <div id="resources" class="page">
-    <div class="container">
-        <h1>Learning Resources</h1>
-        
-        <p>These are the sites that greatly helped me start out with bioinformatics. 
-            If you're just beginning, refer to these curated, handpicked resources to kickstart your own journey. Good luck and happy learning ;)!</p>
-
-        <h2>Jump to Section</h2>
-
-            <li><a href="#linux">Linux</a></li>
-            <li><a href="#python">Python</a></li>
-            <li><a href="#r">R</a></li>
-            <li><a href="#biology">Biology</a></li>
-            <li><a href="#bioinformatics">Bioinformatics</a></li>
-            <li><a href="#statistics">Statistics</a></li>
-            <li><a href="#machinelearning">Machine Learning</a></li>
-            <li><a href="#communities">Communities</a></li>
-        </ul>
-
-        <hr>
-
-        <h2 id="linux">Linux</h2>
-        <ul>
-            <li><a href="https://documentation.ubuntu.com/wsl/stable/howto/install-ubuntu-wsl2/">Linux Installation Guide: Linux Environment for Windows Users</a></li>
-            <li><a href="https://linuxjourney.com/">Linux journey</a></li>
-            <li><a href="https://ubuntu.com/tutorials/command-line-for-beginners#1-overview">Linux command line for beginners</a></li>
-        </ul>
-
-        <h2 id="python">Python</h2>
-        <ul>
-            <li><a href="https://colab.google/">Google Colab for python</a></li>
-            <li><a href="https://biopython.org/wiki/Category%3ACookbook">Tutorial using Biopython</a></li>
-            <li><a href="https://www.coursera.org/learn/python-genomics">Python for Genomic Data Science on Coursera</a></li>
-        </ul>
-
-        <h2 id="r">R</h2>
-        <ul>
-            <li><a href="https://rstudio-education.github.io/hopr/starting.html">R and RStudio installation guide</a></li>
-            <li><a href="https://rpubs.com/Ashu_7/Bio_tut">R for Bioinformatics</a></li>
-        </ul>
-
-        <h2 id="biology">Biology</h2>
-        <ul>
-            <li><a href="https://www.khanacademy.org/science/ap-biology/gene-expression-and-regulation/translation/a/intro-to-gene-expression-central-dogma">Central Dogma: Intro to Gene Expression</a></li>
-            <li><a href="https://bio.libretexts.org/Bookshelves/Introductory_and_General_Biology/General_Biology_(Boundless)">Basics of biology</a></li>
-        </ul>
-
-        <h2 id="bioinformatics">Bioinformatics</h2>
-        <ul>
-            <li><a href="https://bioinformaticsworkbook.org/#gsc.tab=0">Bioinformatics Workbook: hands-on tutorials</a></li>
-            <li><a href="https://www.youtube.com/@Bioinformagician">Bioinformagician: Youtube channel for practical learning</a></li>
-            <li><a href="https://www.udemy.com/course/rnaseq_data_analysis/">Bulk RNA-Seq course on Udemy</a></li>
-            <li><a href="https://nf-co.re/">nf-core: Curated set of NextFlow components and pipelines</a></li>
-            <li><a href="https://sandbox.bio/">sandbox.bio: Interactive bioinformatics tutorials</a></li>
-        </ul>
-
-        <h2 id="statistics">Statistics</h2>
-        <ul>
-            <li><a href="https://www.youtube.com/@statquest">StatQuest with Josh Starmer for simplified stats</a></li>
-            <li><a href="https://www.3blue1brown.com/topics/probability">3Blue1Brown: For visual learning</a></li>
-        </ul>
-
-        <h2 id="machinelearning">Machine Learning</h2>
-        <ul>
-            <li><a href="https://www.youtube.com/@krishnaik06">Krish Naik: Youtube channel for ML concepts and practical learning</a></li>
-            <li><a href="https://www.youtube.com/@Siddhardhan">Siddhardhan: Youtube channel for hands-on AI/ML/DL projects</a></li>
-        </ul>
-
-        <h2 id="communities">Communities</h2>
-        <ul>
-            <li><a href="https://www.biostars.org/">Biostars: Community for clearing doubts</a></li>
-            <li><a href="https://www.reddit.com/r/bioinformatics/">Bioinformatics Community on Reddit</a></li>
-        </ul>
-    </div>
-</div>
-
-
-    <footer>
-        <p>&copy; 2026 Isra. Made with love💜</p>
-    </footer>
-
-    <script src="script.js"></script>
+  </div>
+</main>
+<footer><p>&copy; 2026 Isra. Made with love💜</p></footer>
 </body>
 </html>
