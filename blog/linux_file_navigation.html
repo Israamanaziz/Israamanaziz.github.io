@@ -1,0 +1,560 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Linux File Navigation | Bioinformatics With Isra</title>
+
+    <meta name="description"
+        content="Learn Linux file navigation, absolute and relative paths, directory structures, and essential commands for managing bioinformatics projects.">
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="nav-inner">
+
+                <a href="../index.html" class="nav-logo">
+                    Bioinformatics with Isra
+                </a>
+
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../work.html">Work</a></li>
+                    <li><a href="../personal.html">Personal</a></li>
+                    <li><a href="../resources.html">Resources</a></li>
+                    <li><a href="../blog.html" class="active">Blog</a></li>
+                </ul>
+
+            </div>
+        </nav>
+    </header>
+
+    <main class="page">
+
+        <div class="container article">
+
+            <p class="crumb">
+                <a href="../blog.html">← Back to Blog</a>
+            </p>
+
+            <div class="article-meta">
+                <span class="chapter-no">LESSON 02</span>
+            </div>
+
+            <h1>Linux File Navigation</h1>
+
+            <p class="lede">
+                Knowing Linux commands is only the beginning.
+                You also need to understand where your files are located
+                and how to move between directories. In this lesson,
+                we will explore file paths, directory navigation,
+                and basic file management.
+            </p>
+
+            <div class="article-body">
+
+                <h2>1. Understanding the Linux file system</h2>
+
+                <p>
+                    Linux organises files and folders in a hierarchical
+                    structure. Unlike Windows, which commonly uses drive
+                    letters such as C: and D:, Linux starts its directory
+                    structure from a single root directory represented by
+                    <code>/</code>.
+                </p>
+
+                <p>A simplified Linux directory structure looks like this:</p>
+
+                <pre><code>/
+├── home/
+│   └── isra/
+│       ├── Documents/
+│       ├── Downloads/
+│       └── Bioinformatics/
+│
+├── etc/
+├── usr/
+├── var/
+└── tmp/</code></pre>
+
+                <p>Some important directories:</p>
+
+                <ul>
+                    <li><code>/</code> — the root directory.</li>
+                    <li><code>/home/</code> — contains users' home directories.</li>
+                    <li><code>/usr/</code> — contains many system programs and libraries.</li>
+                    <li><code>/etc/</code> — contains system configuration files.</li>
+                    <li><code>/tmp/</code> — temporary files.</li>
+                </ul>
+
+                <p>
+                    For your everyday bioinformatics work, you will mostly
+                    interact with your home directory and your project folders.
+                </p>
+
+                <h2>2. Absolute and relative paths</h2>
+
+                <p>
+                    A path describes the location of a file or directory.
+                    Linux uses two common types of paths.
+                </p>
+
+                <h3>Absolute path</h3>
+
+                <p>
+                    An absolute path specifies the complete location of
+                    a file or directory, starting from the root directory
+                    <code>/</code>.
+                </p>
+
+                <pre><code>/home/isra/Bioinformatics/RNAseq_Project</code></pre>
+
+                <p>
+                    This path identifies the same location regardless
+                    of your current working directory.
+                </p>
+
+                <h3>Relative path</h3>
+
+                <p>
+                    A relative path specifies a location in relation
+                    to your current working directory.
+                </p>
+
+                <p>For example, suppose your current location is:</p>
+
+                <pre><code>/home/isra/Bioinformatics</code></pre>
+
+                <p>You can enter your RNA-seq project using:</p>
+
+                <pre><code>cd RNAseq_Project</code></pre>
+
+                <p>
+                    You do not need to type the complete directory path.
+                    Linux interprets the command relative to your current
+                    location.
+                </p>
+
+                <h2>3. Navigating directories using cd</h2>
+
+                <p>
+                    We introduced <code>cd</code> in Lesson 01.
+                    Let's explore some additional ways to use it.
+                </p>
+
+                <h3>Move into a directory</h3>
+
+                <pre><code>cd Documents</code></pre>
+
+                <h3>Move one level backwards</h3>
+
+                <pre><code>cd ..</code></pre>
+
+                <h3>Move two levels backwards</h3>
+
+                <pre><code>cd ../..</code></pre>
+
+                <h3>Return to your home directory</h3>
+
+                <pre><code>cd ~</code></pre>
+
+                <h3>Return to your previous directory</h3>
+
+                <pre><code>cd -</code></pre>
+
+                <p>
+                    The <code>cd -</code> command is particularly useful
+                    when switching between two working directories.
+                </p>
+
+                <h2>4. Listing files and directories</h2>
+
+                <p>
+                    The <code>ls</code> command displays the contents
+                    of your current directory.
+                </p>
+
+                <pre><code>ls</code></pre>
+
+                <p>Explore these useful variations:</p>
+
+                <pre><code>ls -l
+ls -lh
+ls -a
+ls -lt
+ls -R</code></pre>
+
+                <ul>
+                    <li><code>ls -l</code> — detailed file listing.</li>
+                    <li><code>ls -lh</code> — readable file sizes.</li>
+                    <li><code>ls -a</code> — includes hidden files.</li>
+                    <li><code>ls -lt</code> — sorts files by modification time.</li>
+                    <li><code>ls -R</code> — lists directories recursively.</li>
+                </ul>
+
+                <p>
+                    You can also list the contents of a different directory
+                    without entering it:
+                </p>
+
+                <pre><code>ls /home/isra/Documents</code></pre>
+
+                <h2>5. Creating and organising directories</h2>
+
+                <p>
+                    A well-organised directory structure is important
+                    when working with sequencing datasets.
+                </p>
+
+                <p>Let's create a project directory:</p>
+
+                <pre><code>mkdir RNAseq_Project
+
+cd RNAseq_Project
+
+mkdir raw_data
+mkdir trimmed_data
+mkdir quality_control
+mkdir assembly
+mkdir quantification
+mkdir differential_expression
+mkdir scripts
+mkdir results</code></pre>
+
+                <p>Your project structure will look like this:</p>
+
+                <pre><code>RNAseq_Project/
+│
+├── raw_data/
+├── trimmed_data/
+├── quality_control/
+├── assembly/
+├── quantification/
+├── differential_expression/
+├── scripts/
+└── results/</code></pre>
+
+                <p>
+                    This structure separates different stages of your
+                    analysis and makes it easier to locate files.
+                </p>
+
+                <h3>Create nested directories</h3>
+
+                <p>
+                    You can create multiple levels of directories
+                    using the <code>-p</code> option.
+                </p>
+
+                <pre><code>mkdir -p RNAseq_Project/results/MultiQC</code></pre>
+
+                <p>
+                    The <code>-p</code> option creates missing parent
+                    directories when necessary.
+                </p>
+
+                <h2>6. Copying and moving files</h2>
+
+                <p>
+                    Bioinformatics workflows often involve copying
+                    datasets, moving analysis outputs and organising
+                    intermediate files.
+                </p>
+
+                <h3>Copy a file using cp</h3>
+
+                <p>
+                    The <code>cp</code> command copies files.
+                </p>
+
+                <pre><code>cp notes.txt backup.txt</code></pre>
+
+                <p>
+                    This creates a copy named <code>backup.txt</code>
+                    while retaining the original file.
+                </p>
+
+                <h3>Copy a file into another directory</h3>
+
+                <pre><code>cp sample.fastq raw_data/</code></pre>
+
+                <h3>Copy an entire directory</h3>
+
+                <pre><code>cp -r RNAseq_Project RNAseq_Project_backup</code></pre>
+
+                <p>
+                    The <code>-r</code> option copies directories
+                    recursively, including their contents.
+                </p>
+
+                <h3>Move or rename a file using mv</h3>
+
+                <p>
+                    The <code>mv</code> command moves files and directories.
+                    It can also rename them.
+                </p>
+
+                <pre><code>mv notes.txt results/</code></pre>
+
+                <p>Rename a file:</p>
+
+                <pre><code>mv notes.txt project_notes.txt</code></pre>
+
+                <h2>7. Viewing file contents</h2>
+
+                <p>
+                    You will frequently need to inspect text files,
+                    configuration files, scripts and bioinformatics
+                    output files.
+                </p>
+
+                <h3>Using cat</h3>
+
+                <p>
+                    <code>cat</code> displays the contents of a file.
+                </p>
+
+                <pre><code>cat notes.txt</code></pre>
+
+                <h3>Using less</h3>
+
+                <p>
+                    <code>less</code> allows you to navigate through
+                    a file without printing everything at once.
+                </p>
+
+                <pre><code>less notes.txt</code></pre>
+
+                <p>Inside less:</p>
+
+                <ul>
+                    <li>Press <code>Space</code> to move forward.</li>
+                    <li>Press <code>b</code> to move backwards.</li>
+                    <li>Press <code>/</code> to search for text.</li>
+                    <li>Press <code>q</code> to exit.</li>
+                </ul>
+
+                <h3>Using head and tail</h3>
+
+                <p>
+                    These commands display the beginning and end
+                    of a file.
+                </p>
+
+                <pre><code>head notes.txt
+tail notes.txt</code></pre>
+
+                <p>Display the first or last 20 lines:</p>
+
+                <pre><code>head -n 20 notes.txt
+tail -n 20 notes.txt</code></pre>
+
+                <p>
+                    These commands are especially useful for inspecting
+                    large text-based bioinformatics files.
+                </p>
+
+                <h2>8. Removing files and directories</h2>
+
+                <p>
+                    Linux provides commands for deleting files
+                    and directories. Use them carefully because
+                    deletion may be permanent.
+                </p>
+
+                <h3>Remove a file</h3>
+
+                <pre><code>rm notes.txt</code></pre>
+
+                <h3>Remove an empty directory</h3>
+
+                <pre><code>rmdir empty_folder</code></pre>
+
+                <h3>Remove a directory and its contents</h3>
+
+                <pre><code>rm -r old_project</code></pre>
+
+                <p>
+                    Be particularly careful with <code>rm -r</code>.
+                    Always verify the directory name and location
+                    before executing a deletion command.
+                </p>
+
+                <h2>9. Working with FASTQ files</h2>
+
+                <p>
+                    Let's connect these commands to a real bioinformatics
+                    scenario.
+                </p>
+
+                <p>
+                    Imagine that you have downloaded paired-end RNA-seq
+                    sequencing data.
+                </p>
+
+                <p>Your files might look like this:</p>
+
+                <pre><code>SRR123456_1.fastq.gz
+SRR123456_2.fastq.gz
+SRR123457_1.fastq.gz
+SRR123457_2.fastq.gz</code></pre>
+
+                <p>
+                    You want to organise these files inside a project
+                    directory.
+                </p>
+
+                <p>First, create a directory:</p>
+
+                <pre><code>mkdir -p RNAseq_Project/raw_data</code></pre>
+
+                <p>Move into your project:</p>
+
+                <pre><code>cd RNAseq_Project</code></pre>
+
+                <p>Check your current location:</p>
+
+                <pre><code>pwd</code></pre>
+
+                <p>List your raw data directory:</p>
+
+                <pre><code>ls raw_data/</code></pre>
+
+                <p>
+                    This is the basic logic behind managing sequencing
+                    datasets before running tools such as FastQC,
+                    Fastp, Salmon or Trinity.
+                </p>
+
+                <h2>10. Quick command reference</h2>
+
+                <div class="table-wrap">
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Command</th>
+                                <th>Purpose</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td><code>pwd</code></td>
+                                <td>Displays the current directory.</td>
+                            </tr>
+
+                            <tr>
+                                <td><code>ls</code></td>
+                                <td>Lists files and directories.</td>
+                            </tr>
+
+                            <tr>
+                                <td><code>cd</code></td>
+                                <td>Changes directory.</td>
+                            </tr>
+
+                            <tr>
+                                <td><code>cd ..</code></td>
+                                <td>Moves one directory backwards.</td>
+                            </tr>
+
+                            <tr>
+                                <td><code>cd ~</code></td>
+                                <td>Returns to the home directory.</td>
+                            </tr>
+
+                            <tr>
+                                <td><code>mkdir</code></td>
+                                <td>Creates a directory.</td>
+                            </tr>
+
+                            <tr>
+                                <td><code>cp</code></td>
+                                <td>Copies files.</td>
+                            </tr>
+
+                            <tr>
+                                <td><code>mv</code></td>
+                                <td>Moves or renames files.</td>
+                            </tr>
+
+                            <tr>
+                                <td><code>rm</code></td>
+                                <td>Removes files.</td>
+                            </tr>
+
+                            <tr>
+                                <td><code>cat</code></td>
+                                <td>Displays file contents.</td>
+                            </tr>
+
+                            <tr>
+                                <td><code>less</code></td>
+                                <td>Views files interactively.</td>
+                            </tr>
+
+                            <tr>
+                                <td><code>head</code></td>
+                                <td>Displays the beginning of a file.</td>
+                            </tr>
+
+                            <tr>
+                                <td><code>tail</code></td>
+                                <td>Displays the end of a file.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+                <h2>11. Practice</h2>
+
+                <p>Open your Ubuntu terminal and complete these tasks:</p>
+
+                <ol>
+                    <li>Create a directory named <code>Linux_Practice</code>.</li>
+                    <li>Enter the directory using <code>cd</code>.</li>
+                    <li>Create three directories named <code>data</code>, <code>results</code> and <code>scripts</code>.</li>
+                    <li>Create a file named <code>notes.txt</code>.</li>
+                    <li>Copy the file into the <code>results</code> directory.</li>
+                    <li>Rename the copied file to <code>analysis_notes.txt</code>.</li>
+                    <li>Use <code>ls -R</code> to inspect your directory structure.</li>
+                </ol>
+
+
+
+            <div class="chapter-nav">
+
+                <a href="01-linux-basics.html">
+                    <span>← Previous lesson</span>
+                    <strong>Getting Started with Linux</strong>
+                </a>
+
+                <a href="03-linux-text-processing.html" class="next">
+                    <span>Next lesson →</span>
+                    <strong>Linux Text Processing</strong>
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>
+            <a href="../blog.html">Back to blog</a>
+            · Bioinformatics with Isra
+        </p>
+    </footer>
+
+</body>
+</html>

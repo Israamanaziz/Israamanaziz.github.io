@@ -1,0 +1,318 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started with Linux | Bioinformatics With Isra</title>
+    <meta name="description"
+        content="Learn Linux terminal basics for bioinformatics, including essential commands, directory navigation and creating your first RNA-seq project structure.">
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="nav-inner">
+
+                <a href="../index.html" class="nav-logo">
+                    Bioinformatics with Isra
+                </a>
+
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../work.html">Work</a></li>
+                    <li><a href="../personal.html">Personal</a></li>
+                    <li><a href="../resources.html">Resources</a></li>
+                    <li><a href="../blog.html" class="active">Blog</a></li>
+                </ul>
+
+            </div>
+        </nav>
+    </header>
+
+    <main class="page">
+
+        <div class="container article">
+
+            <p class="crumb">
+                <a href="../blog.html">← Back to Blog</a>
+            </p>
+
+            <div class="article-meta">
+                <span class="chapter-no">LESSON 01</span>
+            </div>
+
+            <h1>Getting Started with Linux</h1>
+
+            <p class="lede">
+                Many bioinformatics tools run on Linux. Before working with
+                sequencing data, you need to understand how to use the terminal.
+                Let's start with the basics.
+            </p>
+
+            <div class="article-body">
+
+                <h2>1. What is Linux?</h2>
+
+                <p>
+                    Linux is an operating system, like Windows or macOS.
+                    It is widely used in research computing because many scientific
+                    and bioinformatics programs are designed to run in Linux environments.
+                </p>
+
+                <p>You will encounter Linux in several places:</p>
+
+                <ul>
+                    <li>Ubuntu on your laptop through WSL.</li>
+                    <li>Remote servers accessed through SSH.</li>
+                    <li>High-performance computing (HPC) clusters.</li>
+                    <li>Bioinformatics tools such as FastQC, Salmon and Trinity.</li>
+                </ul>
+
+                <h2>2. Understanding the terminal</h2>
+
+                <p>
+                    A terminal is where you communicate with your computer
+                    by typing commands instead of clicking through folders.
+                </p>
+
+                <p>Open Ubuntu. You may see something similar to this:</p>
+
+                <pre><code>isra@computer:~$</code></pre>
+
+                <p>
+                    This is the command prompt. Type a command after the
+                    <code>$</code> sign and press Enter.
+                </p>
+
+                <p>
+                    You do not need to type the dollar sign itself.
+                </p>
+
+                <h2>3. Your first five Linux commands</h2>
+
+                <h3>Command 1: pwd</h3>
+
+                <p>
+                    <code>pwd</code> means print working directory.
+                    It tells you where you are currently working.
+                </p>
+
+                <pre><code>pwd</code></pre>
+
+                <p>Example output:</p>
+
+                <pre><code>/home/isra</code></pre>
+
+                <h3>Command 2: ls</h3>
+
+                <p>
+                    <code>ls</code> lists the files and directories
+                    in your current location.
+                </p>
+
+                <pre><code>ls</code></pre>
+
+                <p>Some useful variations:</p>
+
+        <pre><code>ls -l 
+ls -lh
+ls -a</code></pre>
+
+                <ul>
+                    <li><code>-l</code>: displays a detailed listing.</li>
+                    <li><code>-h</code>: displays readable file sizes.</li>
+                    <li><code>-a</code>: includes hidden files.</li>
+                </ul>
+
+                <h3>Command 3: cd</h3>
+
+                <p>
+                    <code>cd</code> means change directory.
+                    It allows you to move between folders.
+                </p>
+
+                <pre><code>cd Documents</code></pre>
+
+                <p>Move one directory backwards:</p>
+
+                <pre><code>cd ..</code></pre>
+
+                <p>Return to your home directory:</p>
+
+                <pre><code>cd ~</code></pre>
+
+                <h3>Command 4: mkdir</h3>
+
+                <p>
+                    <code>mkdir</code> means make directory.
+                    It creates a new folder.
+                </p>
+
+                <pre><code>mkdir Bioinformatics</code></pre>
+
+                <h3>Command 5: touch</h3>
+
+                <p>
+                    <code>touch</code> creates an empty file if it does not
+                    already exist.
+                </p>
+
+                <pre><code>touch notes.txt</code></pre>
+
+                <h2>4. Create your first RNA-seq project directory</h2>
+
+                <p>
+                    Let's put these commands together.
+                    We will create a project directory to organise our
+                    RNA-seq analysis.
+                </p>
+
+                <p>Run the following commands one at a time:</p>
+
+                <pre><code>mkdir RNAseq_Project
+
+cd RNAseq_Project
+
+mkdir raw_data
+mkdir results
+mkdir scripts
+mkdir quality_control
+
+touch notes.txt
+
+pwd
+ls</code></pre>
+
+                <p>Your directory should now look like this:</p>
+
+                <pre><code>RNAseq_Project/
+│
+├── raw_data/
+├── results/
+├── scripts/
+├── quality_control/
+└── notes.txt</code></pre>
+
+                <p>What are these folders for?</p>
+
+                <ul>
+                    <li><code>raw_data/</code> — original sequencing data.</li>
+                    <li><code>results/</code> — analysis outputs.</li>
+                    <li><code>scripts/</code> — scripts and code.</li>
+                    <li><code>quality_control/</code> — FastQC and MultiQC reports.</li>
+                    <li><code>notes.txt</code> — project notes.</li>
+                </ul>
+
+                <p>
+                    Keeping raw data separate from analysis outputs makes
+                    your project easier to organise and reproduce.
+                </p>
+
+                <h2>5. Quick command reference</h2>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Command</th>
+                                <th>Purpose</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td><code>pwd</code></td>
+                                <td>Shows your current location.</td>
+                            </tr>
+
+                            <tr>
+                                <td><code>ls</code></td>
+                                <td>Lists files and directories.</td>
+                            </tr>
+
+                            <tr>
+                                <td><code>cd</code></td>
+                                <td>Changes directory.</td>
+                            </tr>
+
+                            <tr>
+                                <td><code>mkdir</code></td>
+                                <td>Creates a directory.</td>
+                            </tr>
+
+                            <tr>
+                                <td><code>touch</code></td>
+                                <td>Creates an empty file.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2>6. Practice</h2>
+
+                <p>Open Ubuntu and complete these tasks:</p>
+
+                <ol>
+                    <li>Create a directory named <code>Practice</code>.</li>
+                    <li>Enter that directory using <code>cd</code>.</li>
+                    <li>Create a file named <code>hello.txt</code>.</li>
+                    <li>Use <code>ls</code> to confirm that the file exists.</li>
+                </ol>
+
+
+                <h2>For more:</h2>
+
+                <ul>
+                    <li>
+                        <a href="https://swcarpentry.github.io/shell-novice/">
+                            The Unix Shell — Software Carpentry
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://bioinformatics.ccr.cancer.gov/docs/bioinformatics-for-beginners-2025/">
+                            NIH Bioinformatics for Beginners
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://learn.microsoft.com/en-us/windows/wsl/">
+                            Windows Subsystem for Linux
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="chapter-nav">
+
+                <div>
+                    <span>Lesson 01</span>
+                    <strong>Getting Started with Linux</strong>
+                </div>
+
+                <a href="02-linux-file-management.html" class="next">
+                    <span>Next lesson →</span>
+                    <strong>Linux File Management</strong>
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>
+            <a href="../blog.html">Back to blog</a>
+            · Bioinformatics with Isra
+        </p>
+    </footer>
+
+</body>
+</html>
